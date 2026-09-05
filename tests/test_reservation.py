@@ -8,3 +8,6 @@ class ReservationTests(unittest.TestCase):
 
     def test_after_deadline(self):
         self.assertFalse(is_active(100, 101))
+
+    def test_exact_deadline_is_expired(self):
+        self.assertFalse(is_active(100, 100))
